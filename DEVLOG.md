@@ -135,3 +135,9 @@ Precision/Recall: 0.99 (Indicates the model is equally good at catching fakes an
 - **Action:** Implemented Modular Architecture (Data/Models/Src split).
 - **Learning:** Path management using relative paths (`../`) and the importance of `__init__.py`.
 - **Logic:** Separation of Concerns—keeping the "UI" (app.py) separate from the "Logic" (src/).
+
+### Learning Update: The "Why" of .gitignore
+- **Concept**: Separation of Data and Logic.
+- **Why**: GitHub is for code (recipe), not for raw ingredients (data) or finished products (models).
+- **Risk**: Pushing models/data causes repository bloat and security risks.
+- **Solution**: Documented the "Training Pipeline" in README so others can reproduce my results.
