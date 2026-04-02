@@ -154,3 +154,8 @@ Precision/Recall: 0.99 (Indicates the model is equally good at catching fakes an
 - **UX**: Added `st.spinner` and `st.status` for real-time feedback during long-running tasks.
 - **Architecture**: Used columns and sidebars to create a professional dashboard layout.
 
+### Project 2: FINAL MILESTONE ✅
+- **Deployment**: Successfully live on Streamlit Cloud.
+- **Architecture**: Automated training pipeline using Hugging Face datasets.
+- **Key Fix**: Resolved "Single Class" error by merging raw CSVs and handling NaNs before training.
+- **Senior Insight**: "A project isn't finished until it's deployed and automated."
