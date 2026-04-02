@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # 1. Create the data and models directories on the cloud server
 mkdir -p data
