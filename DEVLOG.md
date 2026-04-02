@@ -141,3 +141,16 @@ Precision/Recall: 0.99 (Indicates the model is equally good at catching fakes an
 - **Why**: GitHub is for code (recipe), not for raw ingredients (data) or finished products (models).
 - **Risk**: Pushing models/data causes repository bloat and security risks.
 - **Solution**: Documented the "Training Pipeline" in README so others can reproduce my results.
+
+### Phase 11 — Cloud Native Deployment (Hugging Face + Streamlit)
+- **Strategy**: Used Hugging Face for large-scale data hosting (600MB+).
+- **Automation**: Created `setup.sh` to automate environment prep and model training in the cloud.
+- **Challenge**: Bypassing GitHub's 100MB file limit.
+- **Fix**: Used `curl` to pull datasets directly into the Streamlit server instance.
+- **Learning**: Mastered the "Cold Start" problem in cloud deployment—ensuring dependencies and models are ready before the first user arrives.
+
+### Phase 12 — UI/UX Engineering
+- [cite_start]**Optimization**: Implemented `@st.cache_resource` to prevent redundant model loading. 
+- **UX**: Added `st.spinner` and `st.status` for real-time feedback during long-running tasks.
+- **Architecture**: Used columns and sidebars to create a professional dashboard layout.
+
