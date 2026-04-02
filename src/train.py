@@ -13,8 +13,8 @@ df_true = pd.read_csv("data/True.csv")
 df_true = df_true.rename(columns={"ttitle": "title"})
 
 
-print("Fake columns:", df_fake.columns.tolist())
-print("True columns:", df_true.columns.tolist())
+# print("Fake columns:", df_fake.columns.tolist())
+# print("True columns:", df_true.columns.tolist())
 
 
 df_fake['label'] = 0
@@ -32,7 +32,7 @@ df_true['content'] = df_true['title'] + " " + df_true['text']
 
 df = pd.concat([df_fake, df_true], axis=0).reset_index(drop=True)
 
-print(df.columns.tolist())
+# print(df.columns.tolist())
 
 
 
@@ -53,9 +53,9 @@ df = df[df["content"].str.strip() != ""]
 X = df["content"]
 y = df["label"]
 
-print(f"Total samples: {len(X)}")
-print(f"Class distribution:\n{y.value_counts()}")
-print(f"Final Class distribution:\n{y.value_counts()}")
+# print(f"Total samples: {len(X)}")
+# print(f"Class distribution:\n{y.value_counts()}")
+# print(f"Final Class distribution:\n{y.value_counts()}")
 
 
 # Reset index
@@ -89,7 +89,7 @@ X_test_tfidf = vectorizer.transform(X_test)
 
 model = LogisticRegression()
 model.fit(X_train_tfidf,y_train)
-print("Model trained!")
+# print("Model trained!")
 
 #  Check accuracy
 from sklearn.metrics import accuracy_score
@@ -115,4 +115,4 @@ import joblib
 joblib.dump(model, "models/model.pkl") # dump use for model save 
 joblib.dump(vectorizer, "models/vectorizer.pkl")
 
-print("Model saved!")
+# print("Model saved!")
