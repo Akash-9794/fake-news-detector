@@ -76,7 +76,7 @@ X_train , X_test , y_train, y_test = train_test_split(
 # print("Testing size:", X_test.shape)
 
 # tf-idf
-vectorizer = TfidfVectorizer(max_features=5000)
+vectorizer = TfidfVectorizer(max_features=10000)
 # to fit vectorizer on training data
 X_train_tfidf = vectorizer.fit_transform(X_train)
 # to text ony transform data
