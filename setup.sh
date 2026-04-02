@@ -16,3 +16,4 @@ curl -L "https://huggingface.co/datasets/Akai1014/fake-news-data/resolve/main/Tr
 # 3. Train the model on the server to create model.pkl and vectorizer.pkl
 python3 src/train.py
 
+https://huggingface.co/datasets/Akai1014/fake-news-data/resolve/main/Fake.csv

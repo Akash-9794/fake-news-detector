@@ -1,18 +1,27 @@
 import pandas as pd 
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-df = pd.read_csv("../data/cleaned_news.csv")
+import os
+
+os.makedirs("models", exist_ok=True) # This creates the folder if it's missing
+
+df_fake = pd.read_csv("data/Fake.csv")
+df_true = pd.read_csv("data/True.csv")
+
+df_fake['label'] = 0
+df_true['label'] = 1
+df = pd.concat([df_fake, df_true], axis=0).reset_index(drop=True)
 
 # print(df.shape)
 # print(df["label"].value_counts())
 
-X = df["clean_content"]
+X = df["title"] + " " + df["text"] 
 y = df["label"]
 
 # print("X shape",X.shape)
 # print("y shape",y.shape)
 
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 # NaN fill karo empty string se
 X = X.fillna("")
@@ -77,7 +86,7 @@ from sklearn.metrics import classification_report
 
 import joblib
 
-joblib.dump(model, "../models/model.pkl") # dump use for model save 
-joblib.dump(vectorizer, "../models/vectorizer.pkl")
+joblib.dump(model, "models/model.pkl") # dump use for model save 
+joblib.dump(vectorizer, "models/vectorizer.pkl")
 
 print("Model saved!")
